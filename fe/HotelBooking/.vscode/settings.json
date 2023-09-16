@@ -1,0 +1,14 @@
+{
+    "eslint.validate": ["javascript", "typescript"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        // "source.removeAllUnusedCode": true,
+        "source.organizeImports": true
+      },
+      "java.configuration.updateBuildConfiguration": "interactive",
+      "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+      },
+}
