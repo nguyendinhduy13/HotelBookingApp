@@ -223,34 +223,4 @@ const InfoProfile = ({navigation}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  imgAvtInfo: {
-    width: 120,
-    height: 120,
-    borderColor: '#d0d0d0',
-    borderWidth: 1,
-    borderRadius: 80,
-    marginRight: 10,
-  },
-  wrapIconCamera: {
-    alignSelf: 'center',
-    backgroundColor: 'white',
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    bottom: 40,
-    left: 33,
-  },
-  wrapLoading: {
-    width: 120,
-    height: 120,
-    borderColor: '#d0d0d0',
-    borderWidth: 1,
-    borderRadius: 80,
-    marginRight: 10,
-  },
-});
-
 export default InfoProfile;

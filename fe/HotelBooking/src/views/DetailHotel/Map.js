@@ -2,11 +2,9 @@ import {StyleSheet, Text, View} from 'react-native';
 import React, {useRef} from 'react';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import CustomHeader from '../../components/CustomHeader';
-import {useSelector} from 'react-redux';
 const Map = ({route}) => {
   const mapRef = useRef(null);
   const hotel = route.params;
-  const {user_position} = useSelector(state => state.global);
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <CustomHeader title="Map" />

@@ -228,12 +228,3 @@ const AllComments = ({navigation, route}) => {
 
 export default AllComments;
 
-const styles = StyleSheet.create({
-  HeadrView1: {
-    height: 50,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    elevation: 5,
-  },
-});
