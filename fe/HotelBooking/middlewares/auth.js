@@ -96,7 +96,28 @@ export const APIUpdateProfile = async (
   }
 };
 
-
+export const APIChangePassword = async (email, old_password, new_password) => {
+  try {
+    const response = await fetch(`${LOCAL_API_URL}/auth/changePassword`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({email, old_password, new_password}),
+    });
+    const data = await response.json();
+    return {status: 200, data: data};
+  } catch (error) {
+    return {
+      status: 401,
+      data: {
+        message:
+          'An error occurred while changing password. Please try again later.',
+      },
+      error: error,
+    };
+  }
+};
 
 export const APIUpdateTokenNotification = async (tokenNotification, email) => {
   try {
