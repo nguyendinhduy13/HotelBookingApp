@@ -63,6 +63,49 @@ const DetailBooking = ({ navigate, route }) => {
     const { userData } = useSelector(state => state.global);
     let temp = useRef(0);
 
+    const filterStatus = () => {
+        if (item?.status === 'Pending') {
+            if (item?.paymented === false) {
+                return t('pending');
+            }
+            return t('ongoing');
+        } else if (item?.status === 'Completed') {
+            return t('completed');
+        } else if (item?.status === 'Cancelled') {
+            return t('cancelled');
+        }
+        return t('unknown');
+    };
+
+    const formatDate = date => {
+        try {
+            const dateArr = date?.split('-');
+            const year = dateArr[0];
+            const month = dateArr[1];
+            const day = dateArr[2];
+            return `${day}/${month}/${year}`;
+        } catch (error) {
+            return '';
+        }
+    };
+
+    const formatAddress = address => {
+        if (address.length > 64) {
+            return `${address.substring(0, 64)}...`;
+        }
+    };
+
+    const FormatAddress = address => {
+        try {
+            if (address.length > 45) {
+                return address.slice(0, 45) + '...';
+            }
+            return address;
+        } catch (error) {
+            return '';
+        }
+    };
+
     const handleRating = async () => {
         if (ratecontent === '' || starhotel === 0) {
             ToastAndroid.show('Please fill all fields', ToastAndroid.SHORT);
