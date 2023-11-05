@@ -40,33 +40,6 @@ export const SignIn = async (email, password) => {
   }
 };
 
-export const CreateAccount = async (
-  name,
-  phone_number,
-  email,
-  password,
-  type,
-) => {
-  try {
-    const response = await fetch(`${LOCAL_API_URL}/auth/register`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({name, phone_number, email, password, type}),
-    });
-    const data = await response.json();
-    return {status: 200, data: data};
-  } catch (error) {
-    return {
-      status: 401,
-      data: {
-        message: 'An error occurred while signing up. Please try again later.',
-      },
-      error: error,
-    };
-  }
-};
 
 export const APIUpdateProfile = async (
   name,
@@ -119,3 +92,28 @@ export const APIChangePassword = async (email, old_password, new_password) => {
   }
 };
 
+export const APIUpdateTokenNotification = async (tokenNotification, email) => {
+  try {
+    const response = await fetch(
+      `${LOCAL_API_URL}/auth/updateTokenNotification`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({tokenNotification, email}),
+      },
+    );
+    const data = await response.json();
+    return {status: 200, data: data};
+  } catch (error) {
+    return {
+      status: 401,
+      data: {
+        message:
+          'An error occurred while updating token notification. Please try again later.',
+      },
+      error: error,
+    };
+  }
+};
