@@ -56,6 +56,13 @@ export const UpdateReview = async id => {
 export const AddNewOrder = async dataOrder => {
   const API = `${LOCAL_API_URL}/orders/addneworder`;
   const {
+    id_user,
+    id_hotel,
+    id_vehicle,
+    id_room,
+    start_date,
+    end_date,
+    check_in,
     check_out,
     total,
     payment_method,
