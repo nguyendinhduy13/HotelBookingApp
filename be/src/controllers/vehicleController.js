@@ -21,24 +21,6 @@ const AddNewVehicle = async (req, res) => {
   res.status(200).send(vehicle);
 };
 
-const AddNewVehicleTest = async (req, res) => {
-  const { name, brand, specification, price, image, hotel_id, description } =
-    req.body;
-  const vehicle = new Vehicle({
-    name,
-    brand,
-    specification,
-    price,
-    image,
-    hotel_id,
-    description,
-  });
-  const hotel = await Hotel.find({ id: hotel_id });
-  hotel[0].vehicles.push(vehicle._id);
-  hotel[0].save();
-  vehicle.save();
-  res.status(200).send(vehicle);
-};
 
 const UpdateVehicle = async (req, res) => {
   try{
