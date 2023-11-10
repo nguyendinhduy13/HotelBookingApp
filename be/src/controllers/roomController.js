@@ -30,34 +30,6 @@ const AddNewRoom = async (req, res) => {
   res.status(200).send(room);
 };
 
-const AddNewRoomTest = async (req, res) => {
-  const {
-    name,
-    price,
-    description,
-    utility,
-    image,
-    isactive,
-    hotel_id,
-    tag,
-  } = req.body;
-  const room = new Room({
-    name,
-    price,
-    description,
-    image,
-    utility,
-    isactive,
-    hotel_id,
-    tag,
-  });
-  const hotel = await Hotel.find({ id: hotel_id });
-  hotel[0].rooms.push(String(room._id));
-  hotel[0].save();
-  room.save();
-  res.status(200).send(room);
-};
-
 const UpdateRoom = async (req, res) => {
   try{
   const {
