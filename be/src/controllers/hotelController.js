@@ -98,13 +98,6 @@ const UpdateHotel = async (req, res) => {
   res.status(200).send(newHotel);
 };
 
-const UpdateHotelTest = async (req, res) => {
-  const hotel = await Hotel.findByIdAndUpdate(req.params.id, req.body);
-  //return newest data
-  const newHotel = await Hotel.findById(req.params.id);
-  res.status(200).send(newHotel);
-};
-
 module.exports = {
   AddNewHotel,
   GetAllHotel,
