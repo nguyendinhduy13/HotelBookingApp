@@ -8,7 +8,7 @@ module.exports = {
   tabWidth: 4,
   parser: 'flow',
   usePrettierrc: false,
-  width: 120,
+  width: 100,
   fileInfoOptions: {
       withNodeModules: true,
   },
