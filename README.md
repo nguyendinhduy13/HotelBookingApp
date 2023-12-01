@@ -27,3 +27,6 @@ Team project for a medical delivery mobile app based on React native
   - Edit file api.js according IPV4 of computer. Example (export const LOCAL_API_URL = 'http://192.168.2.5:6996';) My IPV4 is 192.168.2.5
   - Using command `yarn install` to install node modules
   - Using command `yarn start` to build this project.
+- BE
+  - Using command `yarn install` to install node modules
+  - Using command `yarn start` to build this project.
