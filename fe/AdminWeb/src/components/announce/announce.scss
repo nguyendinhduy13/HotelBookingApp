@@ -1,0 +1,95 @@
+.announce {
+  position: fixed;
+  top: 2.5rem;
+  right: 1rem;
+  z-index: 9999;
+
+  .announceContainer {
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: move-and-fade-out 3s ease forwards;
+    @keyframes move-and-fade-out {
+      0% {
+        transform: translateX(200%);
+        opacity: 0;
+      }
+      25% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      50% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+    .content {
+      display: flex;
+      border-radius: 4px;
+      align-items: center;
+      padding: 0.5rem;
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+
+        &.success {
+          color: #4caf50;
+        }
+
+        &.error {
+          color: #f44336;
+        }
+      }
+      .announcement-text {
+        font-size: 1rem;
+        font-weight: 500;
+
+        &.success {
+          color: #4caf50;
+        }
+
+        &.error {
+          color: #f44336;
+        }
+      }
+    }
+  }
+
+  .rainbow-div {
+    width: 100%;
+    height: 4px;
+    animation: move-and-reduce-size 1.5s linear forwards;
+
+    &.success {
+      background-color: #4caf50;
+    }
+
+    &.error {
+      background-color: #f44336;
+    }
+  }
+
+  @keyframes move-and-reduce-size {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%) scaleX(0);
+    }
+  }
+}
