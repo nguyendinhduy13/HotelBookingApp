@@ -1,0 +1,121 @@
+.datatable {
+  height: 550px;
+  padding: 20px;
+  
+  .datatableTitle {
+    width: 100%;
+    font-size: 24px;
+    color: gray;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cellWithImg {
+    display: flex;
+    align-items: center;
+
+    .cellImg {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+  }
+  .status {
+    padding: 5px;
+    border-radius: 5px;
+
+    &.Completed {
+      background-color: rgba(0, 128, 0, 0.151);
+      color: green;
+    }
+    &.Pending {
+      background-color: rgba(255, 165, 0, 0.151);
+      color: orange;
+    }
+    &.Cancelled {
+      background-color: rgba(255, 0, 0, 0.151);
+      color: red;
+    }
+  }
+
+  .action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .btnEdit {
+      background-color: #00bfa5;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .delete {
+    position: fixed;
+    bottom: 35px;
+    right: 40%;
+    width: 100px;
+    background-color: #ff1744;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    z-index: 999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: red;
+      transform: scale(1.05);
+    }
+  }
+
+  .statusOrder {
+    position: absolute;
+    bottom: 35px;
+    right: 40%;
+    width: 300px; /* đổi lại giá trị width cho phù hợp */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+  
+    .confirm,
+    .cancel {
+      width: 100px;
+      background-color: #ff1744;
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background-color: red;
+        transform: scale(1.05);
+      }
+    }
+  
+    .confirm {
+      background-color: #00bfa5;
+      &:hover {
+        background-color: #00bfa5;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+}

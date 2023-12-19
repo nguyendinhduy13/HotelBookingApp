@@ -1,0 +1,22 @@
+.loading-table {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        margin-top: 20%;
+      
+        .loading-spinner-table {
+          width: 65px;
+          height: 65px;
+          border: 7px solid #ccc;
+          border-radius: 50%;
+          border-top-color: #007bff;
+          animation: spin 1s linear infinite;
+        }
+      
+        @keyframes spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      }

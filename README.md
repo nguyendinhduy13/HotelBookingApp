@@ -1,6 +1,6 @@
 # HotelBooking-App
 
-Team project for a medical delivery mobile app based on React native
+Team project for a hotel booking mobile app based on React native
 
 # Team members
 

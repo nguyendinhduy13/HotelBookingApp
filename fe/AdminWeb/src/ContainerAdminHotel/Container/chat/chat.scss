@@ -1,0 +1,320 @@
+.chat {
+  display: flex;
+  height: 90vh;
+  overflow: hidden;
+
+  .container {
+    display: flex;
+    position: relative;
+
+    .contact {
+      flex: 2;
+      border-right: 0.5px solid rgb(230, 227, 227);
+      min-height: 100vh;
+      background-color: white;
+
+      .contactHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 0.5px solid rgb(230, 227, 227);
+        margin: 0px 10px;
+
+        p {
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        .icon {
+          font-size: 25px;
+          color: #7451f8;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .contactBody {
+        padding: 10px;
+        height: 80vh;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          width: 0.2em;
+          height: 0.2em;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: white; /* Màu của thanh cuộn */
+        }
+
+        &::-webkit-scrollbar-track {
+          background-color: white; /* Màu của vùng nằm sau thanh cuộn */
+        }
+
+        .contactItem {
+          display: flex;
+          align-items: center;
+          padding: 5px;
+          margin: 10px 0px;
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            cursor: pointer;
+            background-color: #ebebeb;
+          }
+
+          &.active {
+            background-color: #d9d9d9;
+          }
+
+          .contactImg {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+          }
+
+          .contactInfo {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+
+            .contactInfoNameandTime {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .contactName {
+                font-size: 15px;
+                color: #000;
+              }
+
+              .contactTime {
+                font-size: 12px;
+                color: #2b2929;
+              }
+            }
+
+            .contactMsg {
+              font-size: 13px;
+              color: #2b2929;
+            }
+          }
+        }
+      }
+    }
+
+    .chatContainer {
+      flex: 5;
+      display: flex;
+      min-height: 90vh;
+      background-color: #ebebeb;
+      position: relative;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+
+        .chatHeader {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          border-bottom: 0.5px solid rgb(230, 227, 227);
+          justify-content: space-between;
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+          position: relative;
+
+          .InfoHeader {
+            display: flex;
+            align-items: center;
+
+            .HeaderImg {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-right: 10px;
+            }
+
+            p {
+              font-size: 17px;
+              font-weight: 500;
+            }
+          }
+          .deleteDiv {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            .deleteText {
+              font-size: 15px;
+              color: #7451f8;
+            }
+          }
+
+          .icon {
+            font-size: 25px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+
+        .chatBody {
+          flex: 1;
+          padding: 10px;
+          overflow-y: scroll;
+
+          &::-webkit-scrollbar {
+            width: 0.2em;
+            height: 0.2em;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: white; /* Màu của thanh cuộn */
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: white; /* Màu của vùng nằm sau thanh cuộn */
+          }
+
+          .chatMsg {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 10px 0px;
+
+            .chatMsgContent {
+              padding: 10px;
+              border-radius: 10px;
+              background-color: #7451f8;
+              color: white;
+              max-width: 60%;
+              word-wrap: break-word;
+            }
+
+            .chatMsgTime {
+              font-size: 12px;
+              color: #2b2929;
+              margin-top: 5px;
+            }
+          }
+
+          .chatMsgOther {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 10px 0px;
+
+            .chatMsgContent {
+              padding: 10px;
+              border-radius: 10px;
+              background-color: #ebebeb;
+              color: black;
+              max-width: 60%;
+              word-wrap: break-word;
+            }
+
+            .chatMsgTime {
+              font-size: 12px;
+              color: #2b2929;
+              margin-top: 5px;
+            }
+          }
+
+          .iconScrollToEnd {
+            position: absolute;
+            bottom: 15%;
+            right: 50%;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            .icon {
+              font-size: 20px;
+              color: #7451f8;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        .chatFooter {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px;
+          border-top: 0.5px solid rgb(230, 227, 227);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+
+          .chatFooterInput {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            border-radius: 20px;
+            padding: 10px;
+            background: #ebebeb;
+
+            input {
+              border: none;
+              outline: none;
+              flex: 1;
+              font-size: 15px;
+              margin-left: 10px;
+              width: 100%;
+              background: #ebebeb;
+            }
+          }
+
+          .icon {
+            font-size: 25px;
+            color: #7451f8;
+            margin-left: 10px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .chatStart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+        color: black;
+      }
+    }
+  }
+}
